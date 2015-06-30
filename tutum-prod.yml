@@ -7,17 +7,23 @@ lb:
     - "80:80"
   roles:
     - global
+  tags:
+    - prod
 
 web:
   image: 'borja/hello'
   links:
     - "redis:redis"
-  target_num_containers: 1
+  target_num_containers: 6
   deployment_strategy: high_availability
   environment:
     - NAME=New York
+  tags:
+    - prod
 
 redis:
   image: 'tutum/redis'
   environment:
     - REDIS_PASS=password
+  tags:
+    - prod
