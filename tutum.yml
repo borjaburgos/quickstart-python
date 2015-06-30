@@ -4,12 +4,12 @@ lb:
   links:
     - web
   ports:
-    - 80:80
+    - "80:80"
   roles:
     - global
 
 web:
-  image: 'r-test.tutum.co/borjaburgos/helloworld'
+  image: 'borja/hello'
   links:
     - "redis:redis"
   target_num_containers: 3
