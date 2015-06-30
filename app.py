@@ -18,8 +18,8 @@ def hello():
 
     html = "<h3>Hello {name}!</h3>" \
            "<b>Hostname:</b> {hostname}<br/>" \
-           "<b>Visits:</b> {visits}<br/>" 
-           # "<img src='http://s.tutum.co.s3.amazonaws.com/demos/tutum_heart_do.png'>"
+           "<b>Visits:</b> {visits}<br/>" \
+           "<img src='http://s.tutum.co.s3.amazonaws.com/demos/tutum_heart_do.png'>"
     return html.format(name=os.getenv('NAME', "world"), hostname=socket.gethostname(), visits=visits)
 
 
